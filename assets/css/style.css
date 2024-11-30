@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --bg: #f0f0f0;
+    --bgSecondary: #ffffff;
+    --font: #222222;
+    --border: #ccc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg);
+    font-family: "Montserrat";
+}
+
+header {
+    background-color: var(--bgSecondary);
+    position: sticky;
+    top: 0;
+}
+
+nav {
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1% 15%;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: var(--font);
+}
+
+#form-enclosure {
+    max-width: 600px;
+    margin: 3% auto;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 100px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    cursor: pointer;
+    background-color: #45a049;
+}
+
+small{
+    color: #dc3545;
+}
+
+.enclosure {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    margin: 1% auto;
+    gap: 10px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    padding: 1%;
+    max-width: 600px;
+}
+
+.enclosure-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 5px;
+}
+
+.enclosure-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+button.edit, button.delete {
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 5px 10px; 
+    background-color: #007bff; 
+    color: var(--bgSecondary); 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+} 
+
+button.delete { 
+    background-color: #dc3545; 
+} 
+
+button.edit:hover { 
+    background-color: #0056b3; 
+} 
+
+button.delete:hover { 
+    background-color: #c82333
+}
