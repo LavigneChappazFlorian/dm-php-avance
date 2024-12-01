@@ -40,7 +40,7 @@ nav a {
     color: var(--font);
 }
 
-#form-enclosure {
+#form-enclosure, #form-animal {
     max-width: 600px;
     margin: 3% auto;
     padding: 20px;
@@ -67,10 +67,6 @@ input[type="text"] {
     box-sizing: border-box;
 }
 
-textarea {
-    height: 100px;
-}
-
 button[type="submit"] {
     width: 100%;
     padding: 10px;
@@ -90,11 +86,28 @@ small{
     color: #dc3545;
 }
 
-.enclosure {
+/* Style de base pour le select */
+select {
+    font: 'Montserrat';
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    background-color: #fff;
+    padding: 5px 20px 5px 5px; 
+    font-size: 1rem;
+    color: #333; 
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+select option {
+    padding: 10px;
+}
+
+
+.enclosure, .animal {
     display: flex;
     flex-direction: column;
     justify-content: start;
-    align-items: center;
     margin: 1% auto;
     gap: 10px;
     border: 1px solid var(--border);
@@ -104,14 +117,14 @@ small{
     max-width: 600px;
 }
 
-.enclosure-details {
+.enclosure-details, .animal-details {
     display: flex;
     flex-direction: column;
     justify-content: start;
     gap: 5px;
 }
 
-.enclosure-actions {
+.enclosure-actions, .animal-actions {
     display: flex;
     flex-direction: row;
     justify-content: center;

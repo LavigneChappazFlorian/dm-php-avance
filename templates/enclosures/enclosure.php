@@ -1,3 +1,4 @@
+<!-- Enclosure display template !-->
 <div class="enclosure">
     <div class="enclosure-details">
         <span><strong>Nom :</strong> <?= $data['enclosure']['name'] ?></span>

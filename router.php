@@ -1,11 +1,11 @@
 <?php
 
-// Le fait de "require" utils.php  & splAutoload.php dans le routeur permet de les "require" dans tous les autres fichiers du site
+// Requiring utils.php & splAutoload.php in the router will require them in all other files on the site
 require 'utils/utils.php';
 require 'utils/splAutoload.php';
 
 
-// Sytème de redirection avec des conditions
+// Redirection system with conditions
 switch ($_SERVER['REDIRECT_URL']) {
     case '/':
         require 'controllers/indexCtrl.php';
@@ -17,6 +17,18 @@ switch ($_SERVER['REDIRECT_URL']) {
 
     case '/enclosure/delete';
         require 'controllers/deleteEnclosureCtrl.php';
+        break;
+
+    case '/animal';
+        require 'controllers/indexAnimalCtrl.php';
+        break;
+
+    case '/animal/update';
+        require 'controllers/updateAnimalCtrl.php';
+        break;
+
+    case '/animal/delete';
+        require 'controllers/deleteAnimalCtrl.php';
         break;
 
     default: 

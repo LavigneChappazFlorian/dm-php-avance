@@ -1,14 +1,15 @@
 <?php
 
+// Create a new instance of the Enclosure model
 $enclosure = new Models\Enclosure();
 
 // Errors array
 $error = [];
 
-// Vérification d'une requête POST
+// Checking POST request
 if (!empty($_POST)) {
-    // Ajouter un enclos à la bddd
-    // Vérification du champ "nom" du formulaire
+    // Add an enclosure to the database
+    // Check form “name” field on the form
     if (!empty($_POST['enclosureName'])) {
         try {
             $enclosure->setName($_POST['enclosureName']);
@@ -19,7 +20,7 @@ if (!empty($_POST)) {
         $error['name'] = 'Nom obligatoire';
     };
 
-    // Vérification du champ "description" du formulaire
+    // Check the "description" field on the form
     if (!empty($_POST['enclosureDescription'])) {
         try {
             $enclosure->setDescription($_POST['enclosureDescription']);
@@ -27,10 +28,10 @@ if (!empty($_POST)) {
             $error['description'] = $e->getMessage();
         }
     } else {
-        $error['description'] = 'Nom obligatoire';
+        $error['description'] = 'Description obligatoire';
     };
 
-    // Vérification du champ "date" du formulaire
+    // Check the “date” field on the form
     if (!empty($_POST['enclosureDate'])) {
         try {
             $enclosure->setCreated_at($_POST['enclosureDate']);
@@ -38,12 +39,12 @@ if (!empty($_POST)) {
             $error['date'] = $e->getMessage();
         }
     } else {
-        $error['date'] = 'Nom obligatoire';
+        $error['date'] = 'Date obligatoire';
     };
 
-    // vérification de l'absence d'erreur
+    // check for errors
     if (empty($error)) {
-        // Création de l'enclos
+        // Enclosure creation
         $enclosure->createEnclosure();
         // Redirect to the home page
         header('Location: /');
@@ -52,6 +53,7 @@ if (!empty($_POST)) {
     };
 }
 
+// Render the 'index' view with the provided data
 render('index', [
     'enclosures' => $enclosure->getAllEnclosures(),
     'errors' => $error

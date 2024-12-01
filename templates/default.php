@@ -1,3 +1,4 @@
+<!-- Default display template !-->
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -14,6 +15,7 @@
     <header>
         <nav>
             <span><a href="/">Accueil</a></span>
+            <span><a href="/animal">Gestion des animaux</a></span>
         </nav>
     </header>
     

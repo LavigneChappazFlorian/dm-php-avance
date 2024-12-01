@@ -4,20 +4,20 @@
 if (empty($_GET['id'])) redirectTo('/');
 
 // Create a new instance of the Enclosure model
-$enclosure = new Models\Enclosure();
+$animal = new Models\Animal();
 
-// Attempt to set the ID of the enclosure using the 'id' from the POST request
+// Attempt to set the ID of the animal using the 'id' from the POST request
 try {
-    $enclosure->setId($_POST['id']);
+    $animal->setId($_POST['id']);
 } catch (\Throwable $th) {
     // If an error occurs while setting the ID, redirect to the homepage
     redirectTo('/');
 }
 
-// Call the method to delete the enclosure from the database
-$enclosure->deleteEnclosure();
+// Call the method to delete the animal from the database
+$animal->deleteAnimal();
 
-// After deleting the enclosure, redirect to the homepage
+// After deleting the animal, redirect to the homepage
 redirectTo('/');
 
 ?>

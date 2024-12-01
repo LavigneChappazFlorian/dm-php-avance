@@ -1,10 +1,12 @@
 <?php 
 
+// Create a new instance of the Enclosure model
 $enclosure = new Models\Enclosure();
 
+// Errors array
 $errors = [];
 
-// Si l'id dans l'adresse est vide on redirige vers la page d'acceuil sinon on récupère l'id de la tâche
+// Check if the 'id' parameter in the URL is empty; if it is, redirect to the homepage
 if (empty($_GET['id'])) redirectTo('/');
 try {
     $enclosure->setId($_GET['id']);
@@ -12,10 +14,10 @@ try {
     redirectTo('/');
 }
 
-// Vérification d'une requête POST
+// Checking POST request
 if (!empty($_POST)) {
-    // Ajouter un enclos à la bddd
-    // Vérification du champ "nom" du formulaire
+    // Add an animal to the database
+    // Check form “name” field on the form
     if (!empty($_POST['enclosureName'])) {
         try {
             $enclosure->setName($_POST['enclosureName']);
@@ -26,7 +28,7 @@ if (!empty($_POST)) {
         $error['name'] = 'Nom obligatoire';
     };
 
-    // Vérification du champ "description" du formulaire
+    // Check the "description" field on the form
     if (!empty($_POST['enclosureDescription'])) {
         try {
             $enclosure->setDescription($_POST['enclosureDescription']);
@@ -37,7 +39,7 @@ if (!empty($_POST)) {
         $error['description'] = 'Nom obligatoire';
     };
 
-    // Vérification du champ "date" du formulaire
+    // Check the “date” field on the form
     if (!empty($_POST['enclosureDate'])) {
         try {
             $enclosure->setCreated_at($_POST['enclosureDate']);
@@ -48,7 +50,7 @@ if (!empty($_POST)) {
         $error['date'] = 'Nom obligatoire';
     };
 
-    // vérification de l'absence d'erreur
+    // check for errorss
     if (empty($error)) {
         // Création de l'enclos
         $enclosure->updateEnclosure();
@@ -59,6 +61,7 @@ if (!empty($_POST)) {
     };
 }
 
+// Render the 'updateEnclosure' view with the provided data
 render('updateEnclosure', [
     'enclosure' => $enclosure->getEnclosure(),
     'errors' => $errors

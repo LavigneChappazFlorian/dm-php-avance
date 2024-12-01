@@ -1,19 +1,23 @@
 <?php
 
+// Namespace folder
 namespace Models;
 
+// Write PDO instead of \PDO to prevent errors in mySQL
 use \PDO as PDO;
+
 
 class Database
 {
-    static private $instance = null; // Variable "instance"  pour savoir si une instance de la bdd est créée
+    // property declaration
+    static private $instance = null; // “instance” property to know if an instance of the database has been created
 
-    protected $pdo = null; // Variable contenant la bdd avec son instance
+    protected $pdo = null; // Property containing the database and its instance
 
     public function __construct()
     {
-        if (!self::$instance) { // Si aucune instance est créée
-            self::$instance = new PDO('mysql:dbname=zoo;host=localhost;charset=utf8', 'root', 'root', [ // Connexion à la base de données
+        if (!self::$instance) { // If no instance is created
+            self::$instance = new PDO('mysql:dbname=zoo;host=localhost;charset=utf8', 'root', 'root', [ // Database connection
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
             ]);

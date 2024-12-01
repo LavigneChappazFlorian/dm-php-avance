@@ -1,3 +1,4 @@
+<!-- Home page for creating an enclosure and view all enclosures already created !-->
 <?php ob_start() ?>
 
     <div class="create-enclosure">

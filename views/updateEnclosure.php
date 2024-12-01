@@ -1,3 +1,4 @@
+<!-- Page used to update enclosure data and view the animals associated with it!-->
 <?php ob_start() ?>
 
 <div class="create-enclosure">
