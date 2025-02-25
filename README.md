@@ -1,5 +1,4 @@
-# Création d'un générateur de QRCode
-
+# Création d'un site web pour une gestion d'un zoo
 Ce projet est une création un site web permettant de gérer un zoo.
 
 ## Table des matières
@@ -14,9 +13,10 @@ Ce projet consiste à construire un site web permettant de gérer un zoo. Le sit
 
 ## Technologies utilisées
 
-- **HTML** : Pour générer le script
-- **BootStrap** : Pour gérer le style (Framework)
-- **PHP** : Pour gérer la connexion à la bdd
+- **HTML** : Pour générer les dfifférentes pages (via PHP)
+- **CSS** : Pour gérer le style (Framework)
+- **JS** : Pour gérer les scripts
+- **PHP** : Pour gérer la connexion à la bdd & le site via le modèle "MVC" (Model - View - Controller)
 - **MySQL** : Pour gérer la bdd
 
 ## Installation
